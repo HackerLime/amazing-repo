@@ -4,6 +4,17 @@ import webpack from "webpack";
 // in case you run into any typescript error when configuring `devServer`
 import "webpack-dev-server";
 
+const babelLoader = {
+  test: /\.(js|jsx|tsx)/,
+  exclude: /node_modules/,
+  use: {
+    loader: "babel-loader",
+    options: {
+      presets: ["@babel/preset-env"],
+    },
+  },
+};
+
 const config: webpack.Configuration = {
   mode: "production",
   entry: "./src/index.tsx",
@@ -18,6 +29,7 @@ const config: webpack.Configuration = {
         use: "ts-loader",
         exclude: /node_modules/,
       },
+      babelLoader,
       {
         test: /\.css$/, // Для файлов .css
         use: ["style-loader", "css-loader"],
@@ -41,7 +53,6 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.[contenthash].html",
       template: "./public/index.html",
     }),
   ],

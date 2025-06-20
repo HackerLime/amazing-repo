@@ -36,6 +36,7 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.27.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
