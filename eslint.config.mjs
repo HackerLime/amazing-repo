@@ -1,5 +1,4 @@
 import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginReact from 'eslint-plugin-react';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
@@ -9,7 +8,7 @@ export default defineConfig([
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         plugins: { js },
-        extends: ['js/recommended', 'plugin:react/jsx-runtime'],
+        extends: ['js/recommended', 'react:plugin/jsx-runtime'],
     },
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -17,5 +16,4 @@ export default defineConfig([
     },
     tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
-    eslintConfigPrettier,
 ]);
