@@ -1,4 +1,3 @@
-function App() {
-  return <>Jumanji</>;
-}
-export default App;
+export const App = () => {
+  return <>AppAppaaaaффф</>;
+};

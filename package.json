@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack "
   },
   "repository": {
     "type": "git",
@@ -18,15 +18,14 @@
   },
   "homepage": "https://github.com/HackerLime/amazing-repo#readme",
   "devDependencies": {
-    "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/webpack": "^5.28.5",
     "babel-loader": "^10.0.0",
-    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.6.3",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
@@ -36,7 +35,6 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.27.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }

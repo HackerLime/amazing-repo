@@ -4,8 +4,8 @@
     "esModuleInterop": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "esnext",
-    "target": "es5",
+    "module": "ESNext",
+    "target": "esnext",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node"
