@@ -1,15 +1,15 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack from "webpack";
 import { buildLoaders } from "./loaders/buildLoaders";
-export const buildWebpackConfig = (): webpack.Configuration => {
+import { buildPlugins } from "./plugins/buildBlugins";
+import { BuildWebpackConfigProps } from "./types/types";
+export const buildWebpackConfig = ({
+  buildPaths,
+}: BuildWebpackConfigProps): webpack.Configuration => {
   return {
-    mode: "production",
-    entry: "./src/main.tsx",
-    output: {
-      path: path.resolve(__dirname, "..", "..", "dist"),
-      filename: "bundle.[contenthash].js",
-      clean: true,
+    mode: "development",
+    entry: buildPaths.entry,
+    devServer: {
+      port: 5000,
     },
     module: {
       rules: buildLoaders(),
@@ -17,13 +17,11 @@ export const buildWebpackConfig = (): webpack.Configuration => {
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
     },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: "./public/index.html",
-      }),
-    ],
-    devServer: {
-      port: 5000,
+    plugins: buildPlugins({ buildPaths }),
+    output: {
+      path: buildPaths.output,
+      filename: "bundle.[contenthash].js",
+      clean: true,
     },
   };
 };

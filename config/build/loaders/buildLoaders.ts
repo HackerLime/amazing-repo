@@ -1,11 +1,9 @@
 export const buildLoaders = () => {
   const babelLoader = {
-    test: /\.(js|ts)x?$/, // Match .js, .jsx, .ts, .tsx files
+    test: /\.(js|ts)x?$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
-      // No need to specify options here if using babel.config.json
-      // Babel will automatically pick up your babel.config.json
     },
   };
 
