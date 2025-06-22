@@ -1,3 +1,5 @@
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 export const buildLoaders = () => {
     const babelLoader = {
         test: /\.(js|ts)x?$/,
@@ -14,7 +16,7 @@ export const buildLoaders = () => {
     };
     const styleAndCssLoader = {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
     };
 
     const fileLoader = {
